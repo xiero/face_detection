@@ -1,6 +1,6 @@
 #directories
 /.vs/*
-
+*.pdb
 # Prerequisites
 *.d
 
@@ -36,3 +36,6 @@
 
 #visual studio solution
 *.sln
+
+#xml files
+*.xml

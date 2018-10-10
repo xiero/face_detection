@@ -10,7 +10,7 @@ void detectAndDisplay(cv::Mat frame);
 
 /*************GLOBAL VARIABLES (AT LEAST FOR NOW....)************************/
 cv::String face_cascade_name = "haarcascade_frontalface_alt.xml";
-cv::String eyes_cascade_name = "haarcascade_eye_tree_eyeglasses-xml";
+cv::String eyes_cascade_name = "haarcascade_eye_tree_eyeglasses.xml";
 cv::CascadeClassifier face_cascade;
 cv::CascadeClassifier eyes_cascade;
 
@@ -20,8 +20,39 @@ cv::RNG rng(12345);
 
 int main()
 {
+	cv::VideoCapture capture;
+	cv::Mat frame;
 
-	
+	// Load the cascades
+	if (!face_cascade.load(face_cascade_name)) {
+		std::cout << "[ERROR:] Error loading face_cascade!\n" << std::endl;
+		return -1;
+	}
+
+	if (!eyes_cascade.load(eyes_cascade_name)) {
+		std::cout << "[ERROR:] Error loading eyes_cascade!\n" << std::endl;
+	}
+
+	// Read the video stream
+	capture.open("stefan2.avi");
+	if (capture.isOpened()) {
+		while (true)
+		{
+			
+			if (!capture.read(frame))break;
+
+			// Apply the classifier to the frame
+			if (!frame.empty()) {
+				detectAndDisplay(frame);
+			}
+			else {
+				break;
+			}
+
+			int c = cv::waitKey(10);
+			if ((char)c == 'c') break;
+		}
+	}
 
 	return 0;
 }
@@ -60,13 +91,11 @@ void detectAndDisplay(cv::Mat frame)
 			cv::Point center(faces[i].x + eyes[j].x + eyes[j].width*0.5,
 				             faces[i].y + eyes[j].y + eyes[j].height*0.5 );
 			int radius = cvRound((eyes[j].width + eyes[j].height*0.25));
-			cv::circle(frame, center, radius, cv::Scalar(255,0,0), 4, 8. 0);
+			cv::circle(frame, center, radius, cv::Scalar(255,0,0), 4, 8, 0);
 		}
 		
 	}
 	//--show the detection
 	cv::imshow(window_name, frame);
-
-
 }
 
