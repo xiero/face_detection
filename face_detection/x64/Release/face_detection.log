@@ -1,0 +1,35 @@
+﻿  main.cpp
+c:\users\h_csa\source\repos\face_detection\face_detection\main.cpp(76): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+c:\users\h_csa\source\repos\face_detection\face_detection\main.cpp(75): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+c:\users\h_csa\source\repos\face_detection\face_detection\main.cpp(79): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+c:\users\h_csa\source\repos\face_detection\face_detection\main.cpp(78): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+c:\users\h_csa\source\repos\face_detection\face_detection\main.cpp(92): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+c:\users\h_csa\source\repos\face_detection\face_detection\main.cpp(91): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+  Generating code
+  All 144 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  face_detection.vcxproj -> C:\Users\h_csa\source\repos\face_detection\x64\Release\face_detection.exe
