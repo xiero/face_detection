@@ -57,11 +57,15 @@ void detectAndDisplay(cv::Mat frame)
 
 		for (size_t j = 0; j < eyes.size(); j++)
 		{
-			// code goes here for eyes detection...
+			cv::Point center(faces[i].x + eyes[j].x + eyes[j].width*0.5,
+				             faces[i].y + eyes[j].y + eyes[j].height*0.5 );
+			int radius = cvRound((eyes[j].width + eyes[j].height*0.25));
+			cv::circle(frame, center, radius, cv::Scalar(255,0,0), 4, 8. 0);
 		}
-		cv::imshow(window_name, frame);
+		
 	}
-
+	//--show the detection
+	cv::imshow(window_name, frame);
 
 
 }
